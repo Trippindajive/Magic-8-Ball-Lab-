@@ -1,0 +1,110 @@
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ * 
+ * Basic magic 8 ball, with an equal number of options in each category. Teaches 
+ * basic if / else statements.
+ * 
+ * 
+ * @author Tim Riggins <br>
+ *         riggsx2@colostate.edu<br>
+ *         Computer Science Department <br>
+ *         Colorado State University
+ * @version 201990
+ */
+public class EightBall {
+    private static Scanner scanner = new Scanner(System.in);
+    private static Random rnd = new Random();
+    
+    public static String getAnswer(int category, int answer) {
+       if (category >= 74) { //positive category
+          
+          if (answer == 0) { //positive answers
+             System.out.println("As I see it, yes.");
+         } if (answer == 1) {
+             System.out.println("Signs point to yes.");
+         } if (answer == 2) {
+             System.out.println("Outlook good.");
+         } if (answer == 3) {
+             System.out.println("Without a doubt." );
+         } if (answer == 4) {
+             System.out.println("You may rely on it.");
+         }
+             
+       } else if (category >=24) { //neutral category
+          
+          if (answer == 0) { //neutral answers
+             System.out.println("Reply hazy, try again.");
+         } if (answer == 1) {
+             System.out.println("Ask again later.");
+         } if (answer == 2) {
+             System.out.println("Better not tell you.");
+         } if (answer == 3) {
+             System.out.println("Cannot predict now.");
+         } if (answer == 4) {
+             System.out.println("Concentrate and ask again.");
+         }
+             
+       } else if (category <24) { //negative category
+          
+          if (answer == 0) { //negative answers
+             System.out.println("Don't count on it.");
+          } if (answer == 1) {
+             System.out.println("My reply is no.");
+          } if (answer == 2) {
+             System.out.println("My sources say no.");
+          } if (answer == 3) {
+             System.out.println("Outlook not so good.");
+          } if (answer == 4) {
+             System.out.println("Very doubtful.");
+          }
+       }
+          return "Misty";
+    }
+          
+    
+
+       
+    /*public static String positiveAnswers(int answer) {
+       if (answer == 0) {
+          System.out.println("As I see it, yes.");
+       } else if (answer == 1) {
+          System.out.println("Signs point to yes.");
+       } else if (answer == 2) {
+          System.out.println("Without a doubt.");
+       } else if (answer == 3) {
+          System.out.println("You may rely on it.");
+       }
+       return positiveAnswers;
+    }*/
+    
+
+// ************** don't modify below this line ************************
+    public static void main(String[] args) {
+        printSpash();
+        run();
+    }
+
+    public  static void printSpash() {
+        System.out.println("88888888888888888888");
+        System.out.println("8   Magic 8 Ball   8");
+        System.out.println("8    Ask away      8");
+        System.out.println("88888888888888888888");
+        System.out.println("\nAnd the answer is...\n");
+    }
+
+    public static void run() {
+        System.out.println(getAnswer(rnd.nextInt(100), rnd.nextInt(5))); // gets 0-99 and 0-4 (one less than what you put in)
+        System.out.println();
+        System.out.print("Ask another question (Yes/No?): ");
+        String input = scanner.nextLine();
+        if(input.toLowerCase().startsWith("n"))  { // this ia fun trick, worth remembering it.
+            System.out.println("Thank you for playing!");
+            return;
+        }
+        System.out.println("\nAnd the answer is...\n");
+        run(); // continue looping!
+    }
+
+}
