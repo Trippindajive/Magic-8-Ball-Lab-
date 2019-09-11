@@ -21,63 +21,46 @@ public class EightBall {
        if (category >= 74) { //positive category
           
           if (answer == 0) { //positive answers
-             System.out.println("As I see it, yes.");
+             return "As I see it, yes.";
          } if (answer == 1) {
-             System.out.println("Signs point to yes.");
+             return "Signs point to yes.";
          } if (answer == 2) {
-             System.out.println("Outlook good.");
+             return "Outlook good.";
          } if (answer == 3) {
-             System.out.println("Without a doubt." );
+             return "Without a doubt.";
          } if (answer == 4) {
-             System.out.println("You may rely on it.");
+             return "You may rely on it.";
          }
              
        } else if (category >=24) { //neutral category
           
           if (answer == 0) { //neutral answers
-             System.out.println("Reply hazy, try again.");
+             return "Reply hazy, try again.";
          } if (answer == 1) {
-             System.out.println("Ask again later.");
+             return "Ask again later.";
          } if (answer == 2) {
-             System.out.println("Better not tell you.");
+             return "Better not tell you.";
          } if (answer == 3) {
-             System.out.println("Cannot predict now.");
+             return "Cannot predict now.";
          } if (answer == 4) {
-             System.out.println("Concentrate and ask again.");
+             return "Concentrate and ask again.";
          }
              
        } else if (category <24) { //negative category
           
           if (answer == 0) { //negative answers
-             System.out.println("Don't count on it.");
+             return "Don't count on it.";
           } if (answer == 1) {
-             System.out.println("My reply is no.");
+             return "My reply is no.";
           } if (answer == 2) {
-             System.out.println("My sources say no.");
+             return "My sources say no.";
           } if (answer == 3) {
-             System.out.println("Outlook not so good.");
+             return "Outlook not so good.";
           } if (answer == 4) {
-             System.out.println("Very doubtful.");
+             return "Very doubtful.";
           }
-       }
-          return "Misty";
+       } return getAnswer(category, answer);
     }
-          
-    
-
-       
-    /*public static String positiveAnswers(int answer) {
-       if (answer == 0) {
-          System.out.println("As I see it, yes.");
-       } else if (answer == 1) {
-          System.out.println("Signs point to yes.");
-       } else if (answer == 2) {
-          System.out.println("Without a doubt.");
-       } else if (answer == 3) {
-          System.out.println("You may rely on it.");
-       }
-       return positiveAnswers;
-    }*/
     
 
 // ************** don't modify below this line ************************
